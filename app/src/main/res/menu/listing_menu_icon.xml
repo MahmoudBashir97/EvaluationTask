@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.listing">
+    <item
+        android:id="@+id/search"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="shopping"
+        android:icon="@drawable/ic_shopping_cart_white_24dp"/>
+
+    <item
+        android:id="@+id/shopp_ing"
+        android:icon="@drawable/ic_search_white_24dp"
+        android:orderInCategory="10"
+        android:title="search"
+        app:showAsAction="ifRoom|withText"/>
+
+</menu>

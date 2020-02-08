@@ -29,7 +29,6 @@ public class Categoris_adpt extends RecyclerView.Adapter<Categoris_adpt.ViewHold
 
     Context context;
     List<categories> list;
-    private OnItemClickListener mlistener;
 
     public Categoris_adpt(Context context, List<categories> list) {
         this.context = context;
@@ -70,35 +69,17 @@ public class Categoris_adpt extends RecyclerView.Adapter<Categoris_adpt.ViewHold
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView categioris_img;
         TextView category_name;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            categioris_img=itemView.findViewById(R.id.categioris_img);
-            category_name=itemView.findViewById(R.id.category_name);
+            categioris_img = itemView.findViewById(R.id.categioris_img);
+            category_name = itemView.findViewById(R.id.category_name);
 
-            itemView.setOnClickListener(this);
         }
 
-        @Override
-        public void onClick(View view) {
-            if (mlistener != null){
-                int position=getAdapterPosition();
-                if (position !=RecyclerView.NO_POSITION){
-                    mlistener.onItemClick(position);
-
-                }
-            }
-        }
-    }
-
-    public interface OnItemClickListener{
-        void onItemClick(int position);
-    }
-
-    public void setOnItemClicListener(OnItemClickListener listener){
-        mlistener=listener;
     }
 }

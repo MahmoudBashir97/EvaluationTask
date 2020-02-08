@@ -39,7 +39,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class MainActivity extends AppCompatActivity implements Categoris_adpt.OnItemClickListener , NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "MainActivity";
 
@@ -92,15 +92,8 @@ public class MainActivity extends AppCompatActivity implements Categoris_adpt.On
 
             @Override
             public void onNext(List<categories> models) {
-                Toast.makeText(MainActivity.this, ""+models.get(0).getProducts().get(0).getProduct_img(), Toast.LENGTH_SHORT).show();
-
-                Log.d(TAG, "Mahmoud: "+models);
-
-
                 adpt=new Categoris_adpt(MainActivity.this,models);
                 recyclerView.setAdapter(adpt);
-
-
             }
 
             @Override
@@ -159,12 +152,7 @@ public class MainActivity extends AppCompatActivity implements Categoris_adpt.On
         return true;
     }
 
-    @Override
-    public void onItemClick(int position) {
-        List<categories> category= Collections.singletonList(mcategories.get(position));
 
-       Toast.makeText(this, ""+category.get(position).getCategory_img(), Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
